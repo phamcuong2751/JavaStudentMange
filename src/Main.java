@@ -2,12 +2,15 @@ import data.DataLoader;
 import enums.MenuOption;
 import models.Student;
 import services.StudentService;
+import utils.InputUtils;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static final String filename = "student.dat";
+    private static final String filename = "resources/data/student.dat";
+    private static final String exportFile = "resources/data/students.csv";
+
     private static final List<Student> studentList = DataLoader.getInstance().getStudentList();
 
     private static final String prgramFunction = "1";
@@ -19,7 +22,6 @@ public class Main {
         studentService.saveStudent(filename, studentList);
 
         do {
-
             displayMenu();
             int option = scanner.nextInt();
             try {
@@ -31,7 +33,6 @@ public class Main {
                 choice = MenuOption.values()[option - 1];
             }
 
-
             switch (choice) {
                 case GET_ALL:
                     studentService.printStudentList(filename);
@@ -40,7 +41,7 @@ public class Main {
                     studentService.inputStudent(filename);
                     break;
                 case UPDATE:
-//                    studentService.updateStudentInfo(filename);
+                    studentService.inputStudentUpdate(filename);
                     break;
                 case DELETE:
                     System.out.print("Enter student ID you want to delete (0: EXIT): ");
@@ -58,6 +59,14 @@ public class Main {
 
                     studentService.printStudentList(filename, sortBy, sortType);
                     break;
+                case EXPORT:
+//                    String rootPath = System.getProperty("user.dir");
+//                    System.out.println("Root Path: " + rootPath);
+                    studentService.exportToCSV(filename, exportFile);
+                    break;
+                case IMPORT:
+                    System.out.println("The function is not yet completed!");
+                    break;
                 default:
                     System.out.println("Goodbye!!!");
                     break;
@@ -73,12 +82,9 @@ public class Main {
         System.out.println("Welcome to the Console Program!");
         System.out.println("Choose an option:");
 
-        System.out.println("1. " + "Get all Student");
-        System.out.println("2. " + "Insert new Student");
-        System.out.println("3. " + "Update Student");
-        System.out.println("4. " + "Delete Student");
-        System.out.println("5. " + "Sort Student List");
-        System.out.println("6. " + "Exit");
+        for (MenuOption option : MenuOption.values()) {
+            System.out.println(option.getOption() + ". " + option.getDescription());
+        }
 
         System.out.print("Enter your choice: ");
     }

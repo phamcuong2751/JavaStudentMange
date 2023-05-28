@@ -1,19 +1,27 @@
 package enums;
 
 public enum MenuOption {
-    GET_ALL("1"),
-    INSERT("2"),
-    UPDATE("3"),
-    DELETE("4"),
-    SORT("5"),
-    EXIT("6");
-    private final String type;
+    GET_ALL("1", "Get all Student"),
+    INSERT("2", "Insert new Student"),
+    UPDATE("3", "Update Student"),
+    DELETE("4", "Delete Student"),
+    SORT("5", "Sort Student List"),
+    EXPORT("6", "Export to CSV"),
+    IMPORT("7", "Import from CSV"),
+    EXIT("8", "Exit");
 
-    MenuOption(String type) {
-        this.type = type;
+    private final String option;
+    private final String description;
+
+    MenuOption(String option, String description) {
+        this.option = option;
+        this.description = description;
     }
 
-    public String getProgram() {
-        return type;
+    public String getOption() {
+        return option;
+    }
+    public String getDescription() {
+        return description;
     }
 }

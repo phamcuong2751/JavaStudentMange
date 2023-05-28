@@ -3,9 +3,9 @@ package services;
 import models.Student;
 import repositories.StudentRepository;
 
-import javax.swing.text.DefaultTextUI;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Scanner;
 
@@ -126,5 +126,45 @@ public class StudentService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void inputStudentUpdate(String filename) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter student ID you want to update (0: EXIT): ");
+        int studentIDUpdate = scanner.nextInt();
+        Student student = this.findStudentByID(filename, studentIDUpdate);
+
+        Field[] fields = student.getClass().getDeclaredFields();
+
+        for (Field field : fields) {
+            field.setAccessible(true);
+
+            if (field.getName().equals("studentID")) continue;
+
+            System.out.print("Change " + field.getName() + " (0: N, 1: Y): ");
+            int isChangeField = scanner.nextInt();
+
+            if (isChangeField == 1) {
+                // Consume the remaining newline character
+                scanner.nextLine();
+
+                System.out.print("New " + field.getName() + ": ");
+                String fieldValue = scanner.nextLine();
+
+                try {
+                    if (field.getType().equals(Integer.class)) {
+                        field.set(student, Integer.parseInt(fieldValue));
+                    } else if (field.getType().equals(Double.class)) {
+                        field.set(student, Double.parseDouble(fieldValue));
+                    } else {
+                        field.set(student, fieldValue);
+                    }
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        this.updateStudentInfo(filename, student);
     }
 }
