@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25161bee-d977-4845-bef2-2f9cbedd9de7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/data/student.dat" beforeDir="false" afterPath="$PROJECT_DIR$/resources/data/student.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/MenuOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/MenuOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/InputUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InputUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student.dat" beforeDir="false" afterPath="$PROJECT_DIR$/student.dat" afterDir="false" />
-    </list>
+    <list default="true" id="25161bee-d977-4845-bef2-2f9cbedd9de7" name="Changes" comment="add function export to excel and improve enum" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,8 +75,23 @@
       <option name="presentableId" value="Default" />
       <updated>1685182445199</updated>
       <workItem from="1685182446567" duration="20233000" />
-      <workItem from="1685285495183" duration="3089000" />
+      <workItem from="1685285495183" duration="3428000" />
     </task>
+    <task id="LOCAL-00001" summary="add function export to excel and improve enum">
+      <created>1685288936686</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685288936686</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add function export to excel and improve enum">
+      <created>1685288942373</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685288942373</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +110,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add function export to excel and improve enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="add function export to excel and improve enum" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
