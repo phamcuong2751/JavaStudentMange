@@ -11,15 +11,13 @@ public class Main {
     private static final String filename = "resources/data/student.dat";
     private static final String exportFile = "resources/data/students.csv";
 
-    private static final List<Student> studentList = DataLoader.getInstance().getStudentList();
-
-    private static final String prgramFunction = "1";
+//    private static final List<Student> studentList = DataLoader.getInstance().getStudentList();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         MenuOption choice;
         StudentService studentService = new StudentService();
-        studentService.saveStudent(filename, studentList);
+//        studentService.saveStudent(filename, studentList);
 
         do {
             InputUtils.getInstance().displayMenu();
@@ -73,7 +71,6 @@ public class Main {
                     System.out.println("Goodbye!!!");
                     break;
             }
-
 
         } while (choice != MenuOption.EXIT);
 
