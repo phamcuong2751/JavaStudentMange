@@ -22,13 +22,13 @@ public class Main {
         studentService.saveStudent(filename, studentList);
 
         do {
-            displayMenu();
+            InputUtils.getInstance().displayMenu();
             int option = scanner.nextInt();
             try {
                 choice = MenuOption.values()[option - 1];
             } catch (Exception ex) {
                 System.out.println("ERROR: >>>> " + ex.getMessage());
-                displayMenu();
+                InputUtils.getInstance().displayMenu();
                 option = scanner.nextInt();
                 choice = MenuOption.values()[option - 1];
             }
@@ -57,7 +57,9 @@ public class Main {
                     System.out.print("Do you want sort type (0:  ASC, 1: DESC)? ");
                     String sortType = scanner.next();
 
-                    studentService.printStudentList(filename, sortBy, sortType);
+                    studentService.loadAndSortStudentList(filename, sortBy, sortType);
+                    studentService.printStudentList(filename);
+
                     break;
                 case EXPORT:
 //                    String rootPath = System.getProperty("user.dir");
@@ -78,15 +80,5 @@ public class Main {
         scanner.close();
     }
 
-    private static void displayMenu() {
-        System.out.println("Welcome to the Console Program!");
-        System.out.println("Choose an option:");
-
-        for (MenuOption option : MenuOption.values()) {
-            System.out.println(option.getOption() + ". " + option.getDescription());
-        }
-
-        System.out.print("Enter your choice: ");
-    }
 
 }
