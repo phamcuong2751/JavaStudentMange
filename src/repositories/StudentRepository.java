@@ -91,18 +91,16 @@ public class StudentRepository {
     }
 
     public Integer getStudentIdMax(String filename) {
-        int newID = 0;
+        int studentID = 0;
 
         try (FileInputStream fileIn = new FileInputStream(filename);
              ObjectInputStream objectIn = new ObjectInputStream(fileIn)) {
             List<Student> studentList = (List<Student>) objectIn.readObject();
-            newID = studentList.size();
+            studentID = studentList.size();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        return newID;
+        return studentID;
     }
-
-
 }
