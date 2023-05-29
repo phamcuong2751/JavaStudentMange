@@ -49,10 +49,10 @@ public class Main {
                     }
                     break;
                 case SORT:
-                    System.out.print("Do you want sort by (0:  ID, 1: POINT)? ");
+                    System.out.print("Do you want sort by (0: ID, 1: POINT)? ");
                     String sortBy = scanner.next();
 
-                    System.out.print("Do you want sort type (0:  ASC, 1: DESC)? ");
+                    System.out.print("Do you want sort type (0: ASC, 1: DESC)? ");
                     String sortType = scanner.next();
 
                     studentService.loadAndSortStudentList(filename, sortBy, sortType);

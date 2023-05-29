@@ -168,7 +168,7 @@ public class StudentService {
 
             if (field.getName().equals("studentID")) continue;
 
-            System.out.print("Change " + field.getName() + " (0: N, 1: Y): ");
+            System.out.print("Change " + field.getName() + " (0: No, 1: Yes): ");
             int isChangeField = scanner.nextInt();
 
             if (isChangeField == 1) {
